@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVthèque — Banque Atlantique Bénin (BABN)</title>
+<meta name="description" content="Déposez votre candidature auprès de Banque Atlantique Bénin. Rejoignez une banque panafricaine engagée pour le développement.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="bandeau-officiel">
+  <div class="container">
+    <span>République du Bénin <span class="sep">|</span> Établissement bancaire agréé BCEAO</span>
+    <span>Espace recrutement</span>
+  </div>
+</div>
+
+<header class="entete">
+  <div class="container">
+    <div class="marque">
+      <div class="marque-sigle">BA</div>
+      <div class="marque-texte">
+        <div class="nom-complet">Banque Atlantique Bénin</div>
+        <div class="baseline">BABN — CVthèque</div>
+      </div>
+    </div>
+    <nav class="nav-principale">
+      <a href="#postes">Domaines</a>
+      <a href="#candidater">Déposer un CV</a>
+      <a href="#apropos">À propos</a>
+      <a href="admin/connexion.html" class="bouton-admin-lien">Espace RH</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-contenu">
+      <div class="hero-eyebrow">Recrutement BABN</div>
+      <h1>Construisez votre carrière au sein d'une banque <em>panafricaine</em> de référence.</h1>
+      <p>Banque Atlantique Bénin recrute des talents rigoureux et engagés. Déposez votre CV : il rejoint directement notre vivier de candidatures consulté par nos équipes RH.</p>
+      <div class="hero-actions">
+        <a href="#candidater" class="btn btn-or">Déposer mon CV</a>
+        <a href="#postes" class="btn btn-fantome">Voir les domaines</a>
+      </div>
+      <div class="hero-chiffres">
+        <div class="chiffre">
+          <div class="valeur">7</div>
+          <div class="label">pays du réseau Atlantique</div>
+        </div>
+        <div class="chiffre">
+          <div class="valeur">100%</div>
+          <div class="label">candidatures en ligne</div>
+        </div>
+        <div class="chiffre">
+          <div class="valeur">48h</div>
+          <div class="label">accusé de réception</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ivoire" id="postes">
+  <div class="container">
+    <div class="section-tete">
+      <span class="section-eyebrow">Domaines de recrutement</span>
+      <h2>Des métiers exigeants, au cœur de l'économie béninoise.</h2>
+      <p>Votre CV est conservé dans notre CVthèque et consulté par les équipes RH selon les besoins d'ouverture de poste, dans chacun de ces domaines.</p>
+    </div>
+    <div class="grille-3">
+      <div class="carte">
+        <div class="carte-numero">DOM. 01</div>
+        <h3>Réseau &amp; Exploitation</h3>
+        <p>Chargés de clientèle, conseillers en agence, gestion de portefeuille particuliers et entreprises.</p>
+      </div>
+      <div class="carte">
+        <div class="carte-numero">DOM. 02</div>
+        <h3>Risques &amp; Conformité</h3>
+        <p>Analyse de crédit, contrôle interne, conformité réglementaire et lutte anti-blanchiment.</p>
+      </div>
+      <div class="carte">
+        <div class="carte-numero">DOM. 03</div>
+        <h3>Finance &amp; Opérations</h3>
+        <p>Comptabilité bancaire, trésorerie, moyens de paiement et back-office.</p>
+      </div>
+      <div class="carte">
+        <div class="carte-numero">DOM. 04</div>
+        <h3>Digital &amp; Systèmes d'information</h3>
+        <p>Développement, infrastructure, cybersécurité et transformation digitale bancaire.</p>
+      </div>
+      <div class="carte">
+        <div class="carte-numero">DOM. 05</div>
+        <h3>Ressources humaines</h3>
+        <p>Gestion des talents, formation, administration du personnel et relations sociales.</p>
+      </div>
+      <div class="carte">
+        <div class="carte-numero">DOM. 06</div>
+        <h3>Stages &amp; alternance</h3>
+        <p>Programmes destinés aux jeunes diplômés et étudiants en fin de cycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-blanc" id="candidater">
+  <div class="container">
+    <div class="section-tete">
+      <span class="section-eyebrow">Candidature</span>
+      <h2>Déposez votre CV</h2>
+      <p>Remplissez le formulaire ci-dessous. Votre dossier sera directement intégré à notre CVthèque.</p>
+    </div>
+
+    <div class="form-shell">
+      <div class="form-entete">
+        <h2>Formulaire de candidature</h2>
+        <p>Tous les champs marqués d'un astérisque (*) sont obligatoires</p>
+      </div>
+      <div class="form-corps">
+
+        <div class="message-etat succes" id="msg-succes">
+          ✓ Votre candidature a bien été enregistrée. Notre équipe RH vous contactera si votre profil correspond à un poste ouvert.
+        </div>
+        <div class="message-etat erreur" id="msg-erreur">
+          ✕ Une erreur est survenue. Vérifiez votre connexion et réessayez.
+        </div>
+
+        <form id="form-candidature">
+          <div class="form-grille">
+            <div class="champ">
+              <label for="nom">Nom <span class="requis">*</span></label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="champ">
+              <label for="prenom">Prénom <span class="requis">*</span></label>
+              <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="champ">
+              <label for="email">Adresse e-mail <span class="requis">*</span></label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="champ">
+              <label for="telephone">Téléphone <span class="requis">*</span></label>
+              <input type="tel" id="telephone" name="telephone" placeholder="+229 XX XX XX XX" required>
+            </div>
+            <div class="champ">
+              <label for="ville">Ville de résidence</label>
+              <input type="text" id="ville" name="ville" placeholder="Cotonou, Porto-Novo...">
+            </div>
+            <div class="champ">
+              <label for="domaine">Domaine souhaité <span class="requis">*</span></label>
+              <select id="domaine" name="domaine" required>
+                <option value="" disabled selected>Sélectionnez un domaine</option>
+                <option value="Réseau & Exploitation">Réseau &amp; Exploitation</option>
+                <option value="Risques & Conformité">Risques &amp; Conformité</option>
+                <option value="Finance & Opérations">Finance &amp; Opérations</option>
+                <option value="Digital & SI">Digital &amp; Systèmes d'information</option>
+                <option value="Ressources humaines">Ressources humaines</option>
+                <option value="Stage & Alternance">Stage &amp; Alternance</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+            <div class="champ">
+              <label for="niveau">Niveau d'expérience</label>
+              <select id="niveau" name="niveau">
+                <option value="Débutant">Débutant / Sans expérience</option>
+                <option value="1-3 ans">1 à 3 ans</option>
+                <option value="3-7 ans">3 à 7 ans</option>
+                <option value="7+ ans">Plus de 7 ans</option>
+              </select>
+            </div>
+            <div class="champ large">
+              <label for="diplome">Dernier diplôme obtenu</label>
+              <input type="text" id="diplome" name="diplome" placeholder="Ex : Master en Finance, BTS Banque...">
+            </div>
+            <div class="champ large">
+              <label for="message">Message ou lettre de motivation</label>
+              <textarea id="message" name="message" placeholder="Présentez-vous en quelques lignes (facultatif)"></textarea>
+            </div>
+            <div class="champ large">
+              <label>Votre CV, format PDF <span class="requis">*</span></label>
+              <div class="zone-upload" id="zone-upload">
+                <input type="file" id="cv" name="cv" accept=".pdf" required>
+                <div class="zone-upload-icone">Fichier PDF</div>
+                <div class="zone-upload-texte">Cliquez ou déposez votre CV ici</div>
+                <div class="zone-upload-sous">Taille maximale : 5 Mo</div>
+              </div>
+              <div class="fichier-choisi" id="fichier-choisi"></div>
+            </div>
+          </div>
+
+          <div class="form-pied">
+            <p class="mention-rgpd">En soumettant ce formulaire, vous acceptez que vos données soient conservées par Banque Atlantique Bénin dans le cadre de son processus de recrutement.</p>
+            <button type="submit" class="btn btn-marine" id="btn-envoyer">Envoyer ma candidature</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-marine" id="apropos">
+  <div class="container">
+    <div class="section-tete">
+      <span class="section-eyebrow">À propos</span>
+      <h2>Banque Atlantique Bénin</h2>
+      <p>Filiale du groupe Banque Atlantique, présent dans plusieurs pays d'Afrique de l'Ouest et du Centre, BABN accompagne particuliers, entreprises et institutions dans leurs projets financiers depuis le Bénin.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="pied">
+  <div class="container">
+    <div class="pied-haut">
+      <div>
+        <div class="pied-marque">Banque Atlantique Bénin</div>
+        <p>CVthèque officielle — Espace recrutement</p>
+      </div>
+      <div class="pied-liens">
+        <a href="#postes">Domaines</a>
+        <a href="#candidater">Candidater</a>
+        <a href="admin/connexion.html">Espace RH</a>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <span>© 2026 Banque Atlantique Bénin (BABN)</span>
+      <span>Site de démonstration — CVthèque</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script>
+<script src="js/candidature.js"></script>
+</body>
+</html>
