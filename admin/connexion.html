@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Espace RH — Connexion | BABN</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  .page-connexion {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(160deg, var(--marine-950) 0%, var(--marine-800) 65%, var(--marine-700) 100%);
+    padding: 20px;
+  }
+  .boite-connexion {
+    background: var(--blanc);
+    border-radius: 4px;
+    box-shadow: var(--ombre-lg);
+    width: 100%;
+    max-width: 420px;
+    overflow: hidden;
+  }
+  .boite-connexion-entete {
+    background: var(--marine-900);
+    padding: 32px 36px;
+    text-align: center;
+    border-bottom: 3px solid var(--or-500);
+  }
+  .boite-connexion-entete .marque-sigle { margin: 0 auto 16px; }
+  .boite-connexion-entete h1 {
+    font-family: var(--display);
+    color: var(--blanc);
+    font-size: 19px;
+    font-weight: 600;
+  }
+  .boite-connexion-entete p {
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  .boite-connexion-corps { padding: 36px; }
+  .lien-retour {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--texte-clair);
+    text-align: center;
+    width: 100%;
+  }
+  .lien-retour:hover { color: var(--or-500); }
+</style>
+</head>
+<body>
+
+<div class="page-connexion">
+  <div class="boite-connexion">
+    <div class="boite-connexion-entete">
+      <div class="marque-sigle">BA</div>
+      <h1>Espace Ressources Humaines</h1>
+      <p>Banque Atlantique Bénin — Accès réservé</p>
+    </div>
+    <div class="boite-connexion-corps">
+
+      <div class="message-etat erreur" id="msg-erreur">
+        ✕ Identifiants incorrects. Veuillez réessayer.
+      </div>
+
+      <form id="form-connexion">
+        <div class="champ">
+          <label for="email">Adresse e-mail</label>
+          <input type="email" id="email" name="email" required autocomplete="username">
+        </div>
+        <div class="champ">
+          <label for="mot-de-passe">Mot de passe</label>
+          <input type="password" id="mot-de-passe" name="mot-de-passe" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="btn btn-marine" style="width:100%; justify-content:center;" id="btn-connexion">
+          Se connecter
+        </button>
+      </form>
+
+      <a href="../index.html" class="lien-retour">← Retour au site</a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/config.js"></script>
+<script>
+  const formConnexion = document.getElementById('form-connexion');
+  const btnConnexion = document.getElementById('btn-connexion');
+  const msgErreur = document.getElementById('msg-erreur');
+
+  // Si déjà connecté, redirige directement vers le tableau de bord
+  (async () => {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session) window.location.href = 'tableau-de-bord.html';
+  })();
+
+  formConnexion.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    msgErreur.classList.remove('visible');
+    btnConnexion.disabled = true;
+    btnConnexion.textContent = 'Connexion...';
+
+    const email = document.getElementById('email').value.trim();
+    const motDePasse = document.getElementById('mot-de-passe').value;
+
+    const { error } = await supabaseClient.auth.signInWithPassword({
+      email: email,
+      password: motDePasse
+    });
+
+    if (error) {
+      msgErreur.textContent = '✕ Identifiants incorrects. Veuillez réessayer.';
+      msgErreur.classList.add('visible');
+      btnConnexion.disabled = false;
+      btnConnexion.textContent = 'Se connecter';
+    } else {
+      window.location.href = 'tableau-de-bord.html';
+    }
+  });
+</script>
+</body>
+</html>
